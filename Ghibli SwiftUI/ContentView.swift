@@ -20,7 +20,7 @@ struct ContentView: View {
                 SettingsView()
             }
             Tab("Search", systemImage: "magnifyingglass") {
-                
+                SearchView(movieViewModel: MovieViewModel(shared: NetworkManager.shared))
             }
         }
         .setAppearanceTheme()

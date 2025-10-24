@@ -19,4 +19,12 @@ class MovieViewModel {
     func getData() async {
         movies = await shared.getDataFromServer(url: Constants.endPoint)
     }
+    
+    func searchFilm(for searchTerm: String) -> [Movies] {
+        guard !searchTerm.isEmpty else { return [] }
+        return movies.filter { movie in
+            guard let title = movie.title else { return false }
+            return title.localizedStandardContains(searchTerm)
+        }
+    }
 }
