@@ -5,6 +5,7 @@
 //  Created by Dhathri Bathini on 10/24/25.
 //
 struct Movies: Decodable {
+    var id: String?
     var image: String?
     var movie_banner: String?
     var title: String?
